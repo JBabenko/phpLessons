@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Admin panel</title>
+		<link rel="stylesheet" href="css/960.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/template.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/colour.css" type="text/css" media="screen" charset="utf-8" />
+		<base href="http://localhost:8888/">
+	</head>
+	<body>
+		<div id="app-admin">
+			<h1 id="head">Admin panel</h1>
+
+			<ul id="navigation">
+				<li><a href="./">Главная</a></li>
+				<li><span class="active">Комментарии</span></li>
+				<li><a href="users.html">Пользователи</a></li>
+			</ul>
+			
+			<div id="content" class="container_16 clearfix">
+				<div 
+					v-for="tab in reviewTabs" 
+					:key="tab.name"
+					:class="['tab-button', {'tab-active': currentReviewTab.name === tab.name}]"
+					@click="currentReviewTab = tab"
+				>{{ tab.name === 'pending' ? `${tab.text} (${countPendindReviews})` : tab.text }}</div>
+				<component :is="currentReviewsComponent"
+							@count-pending-reviews="getPendindReviewsLength"
+				></component>
+			</div>
+			
+	</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+		<script src="js/admin.js"></script>
+	</body>
+</html>

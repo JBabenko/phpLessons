@@ -1,0 +1,13 @@
+@mixin df() {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+@mixin title($font-size, $font-weight) {
+  color: #222222;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  text-transform: uppercase;
+}
