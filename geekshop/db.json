@@ -1,0 +1,72 @@
+{
+  "goods": [
+    {
+      "id": 1,
+      "name": "Mango People T-shirt",
+      "price": 52,
+      "category": "men",
+      "type": "shirt",
+      "size": [
+        "S",
+        "M"
+      ],
+      "icon": "img/featured1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Shirt",
+      "price": 48,
+      "category": "women",
+      "type": "shoes",
+      "size": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "icon": "img/featured2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Kids shoes",
+      "price": 29,
+      "category": "kids",
+      "type": "shirt",
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "icon": "img/featured3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Shoes beauty",
+      "price": 46,
+      "category": "women",
+      "type": "shoes",
+      "size": [
+        "XS"
+      ],
+      "icon": "img/featured4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Boots",
+      "price": 30,
+      "category": "men",
+      "type": "shoes",
+      "size": [
+        "XS",
+        "S",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "icon": "img/featured5.jpg"
+    }
+  ],
+  "cart": []
+}

@@ -1,0 +1,110 @@
+[
+    {
+      "id": 1,
+      "name": "Mango People T-shirt",
+      "price": 52,
+      "category": "men",
+      "type": "shirt",
+      "size": [
+        "S",
+        "M"
+      ],
+      "icon": "img/featured1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Plus Ruched Puff Sleeve Blazer Dress",
+      "price": 48,
+      "category": "women",
+      "type": "shoes",
+      "size": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "icon": "img/featured2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Ruched Front Slinky Mini Skirt",
+      "price": 29,
+      "category": "kids",
+      "type": "shirt",
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "icon": "img/featured3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Tall Bandeau Belted Jumpsuit",
+      "price": 46,
+      "category": "women",
+      "type": "dress",
+      "size": [
+        "XS"
+      ],
+      "icon": "img/featured4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Tiger Print Flippy Short",
+      "price": 22,
+      "category": "men",
+      "type": "accessories",
+      "size": [
+        "XS",
+        "S",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "icon": "img/featured5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Chunky Lace Up Cleated Boots",
+      "price": 33,
+      "category": "kids",
+      "type": "boots",
+      "size": [
+        "XS",
+        "S",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "icon": "img/featured6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Shell Suit Piping Runner Shorts",
+      "price": 13,
+      "category": "men",
+      "type": "shoes",
+      "size": [
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "icon": "img/featured7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Lace Co-Ord",
+      "price": 10,
+      "category": "women",
+      "type": "shoes",
+      "size": [
+        "XS",
+        "S",
+        "XL"
+      ],
+      "icon": "img/featured8.jpg"
+    }
+]
