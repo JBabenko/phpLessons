@@ -1,9 +1,17 @@
+<?php
+
+$headerTitle = 'Geek Shop';
+$pageTitle = 'The Brand';
+$currentYear = getDate()['year'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>GeekShop</title>
+    <title><?=$headerTitle?></title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
@@ -745,7 +753,7 @@
         <div class="banner">
             <div class="container banner-background">
                 <div class="banner-text">
-                    <h1 class="banner-text-big">THE BRAND</h1>
+                    <h1 class="banner-text-big"><?=$pageTitle?></h1>
                     <p class="banner-text-small">OF LUXERIOUS <span class="pink">FASHION</span></p>
                 </div>
             </div>
@@ -885,7 +893,7 @@
         </footer>
         <div class="bottom-stripe">
             <div class="container bottom-stripe-wrap">
-                <p class="copyright">© 2017 Brand All Rights Reserved.</p>
+                <p class="copyright">© <?=$currentYear?> Brand All Rights Reserved.</p>
                 <div class="socials">
                     <a href="#" class="socials-item"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="socials-item"><i class="fab fa-twitter"></i></a>
@@ -894,42 +902,6 @@
                     <a href="#" class="socials-item"><i class="fab fa-google-plus-g"></i></a>
                 </div>
             </div>
-        </div>
-
-        <div class="production-item hide">
-            <a href="" class="production-item-link">
-                <img src="/" alt="" class="production-item-img">
-                <div class="production-item-text">
-                    <p class="production-item-title"></p>
-                    <p class="production-item-price"></p>
-                </div>
-            </a>
-            <div class="production-item-addtocart">
-                <div class="production-addtocart-link">
-                    <img src="img/icons/cart_white.svg" alt="cart icon" class="production-cart-icon">
-                    <span class="production-addtocart-text">Add to Cart</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="item-in-cart hide">
-            <a href="single.html">
-                <img src="img/featured2.jpg" alt="" class="drop-cart-img">
-            </a>
-            <div class="drop-cart-desc">
-                <a href="single.html" class="drop-cart-itemname">Rebox zane</a>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="drop-cart-price">
-                    <span class="cart-quantity">1</span> x <span class="cart-price">$250</span>
-                </div>
-            </div>
-            <i class="fas fa-times-circle"></i>
         </div>
 
         <sign-up @close="signUpWindow = false" :isopen="signUpWindow">
