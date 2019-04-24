@@ -72,8 +72,7 @@ function transliteration($str, $rule) {
     $rus = array_keys($rule);
     $eng = array_values($rule);
     
-    $result = str_replace($rus, $eng, $str);
-    echo $result;
+    return str_replace($rus, $eng, $str);
 }
 
-transliteration('Привет мир! Я сообщение, обработанное транслитом', $translit);
+echo transliteration('Привет мир! Я сообщение, обработанное транслитом', $translit);
