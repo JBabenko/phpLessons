@@ -67,12 +67,28 @@ $translit = [
     'Я' => 'Ya'
 ];
 
-function transliteration($str, $rule) {
+function transliteration($inputStr, $rule) {
 
-    $rus = array_keys($rule);
-    $eng = array_values($rule);
+    $newStr = '';
+    $splitedStr = preg_split ('//u', $inputStr);
     
-    return str_replace($rus, $eng, $str);
+    foreach ($splitedStr as $symbol) {
+
+        if (preg_match('/[а-яА-Я]/', $symbol)) {
+
+            foreach ($rule as $key => $item) {
+                if ($symbol === $key) {
+                    $newStr .= $item;
+                    break;
+                }
+            } 
+
+        } else {
+            $newStr .= $symbol;
+        }
+    }
+
+    return $newStr;
 }
 
-echo transliteration('Привет мир! Я сообщение, обработанное транслитом', $translit);
+echo transliteration('Привет мир! Я сообщение, обработанное транслитом.', $translit);
