@@ -64,17 +64,15 @@
     .modal__window {
       position: absolute;
       left: 50vw;
-      width: 80vw;
-      max-height: 80vh;
       transform: translateX(-50%);
       margin-top: 10vh;
-      background: #fff;
       -webkit-box-shadow: 0 3px 8px -2px #dedada;
               box-shadow: 0 3px 8px -2px #dedada;
     }
 
     .modal__img {
-      width: 100%;
+      max-width: 80vw;
+      max-height: 80vh;
     }
   </style>
 </body>
