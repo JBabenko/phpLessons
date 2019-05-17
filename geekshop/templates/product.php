@@ -101,12 +101,15 @@
                 </div>
             </div>
             <main class="production-list">
+
+              <?php foreach($products as $item) : ?>
+
                 <div class="production-item">
-                    <a href="single.html" class="production-item-link">
-                        <img src="img/featured3.jpg" alt="" class="production-item-img">
+                    <a href="./single.php?id=<?= $item['id'] ?>" class="production-item-link">
+                        <img src="<?= $item['icon'] ?>" alt="" class="production-item-img">
                         <div class="production-item-text">
-                            <p class="production-item-title">Mango People T-shirt</p>
-                            <p class="production-item-price">$52.00</p>
+                            <p class="production-item-title"><?= $item['name'] ?></p>
+                            <p class="production-item-price">$<?= $item['price'] ?></p>
                         </div>
                     </a>
                     <div class="production-item-addtocart">
@@ -116,6 +119,9 @@
                         </a>
                     </div>
                 </div>
+
+                <?php endforeach ?>
+
             </main>
             <div class="production-list-pages">
                 <ul class="pages-list">
