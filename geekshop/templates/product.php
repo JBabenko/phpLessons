@@ -1,3 +1,7 @@
+<?php 
+  require ROOT_DIR.'public/reviews.php';
+?>
+
 <div class="production-catalog">
     <div class="container production-catalog-wrap">
         <nav class="production-catalog-left">
@@ -131,3 +135,5 @@
         </div>
     </div>
 </div>
+
+<?php require 'components/reviews.php' ?>

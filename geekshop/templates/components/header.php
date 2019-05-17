@@ -1,4 +1,5 @@
 <body>
+<div id="app">
 <header class="header">
     <div class="container header-wrap">
         <div class="header-left">
