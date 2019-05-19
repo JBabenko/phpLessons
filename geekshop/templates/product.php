@@ -113,7 +113,7 @@
                         </div>
                     </a>
                     <div class="production-item-addtocart">
-                        <a href="" class="production-addtocart-link">
+                        <a href="<?= $pageAddr ?>?addtocart=<?= $item['id'] ?>" class="production-addtocart-link">
                             <img src="img/icons/cart_white.svg" alt="" class="production-cart-icon">
                             <span class="production-addtocart-text">Add to Cart</span>
                         </a>
