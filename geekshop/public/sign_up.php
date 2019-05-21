@@ -18,6 +18,6 @@ $signUpQuery = sprintf(
 mysqli_query(dbConnect(), $signUpQuery);
 
 session_start();
-$_SESSION['user'] = $login;
+$_SESSION['user'] = getUser($login);
 
 header('Location: /geekshop');

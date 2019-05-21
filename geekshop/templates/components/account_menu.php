@@ -1,4 +1,10 @@
-<div class="button header-account-button"><?= $activeUser['name'] ?>
+<div class="button header-account-button">
+  <?php if (!$activeUser) : ?>
+    Вход/Регистрация
+  <?php else : ?>
+    <?= $activeUser['name'] ?>
+  <?php endif; ?>
+
   <span class="header-account-arrow">▼</span>
 
   <?php if (!$activeUser) : ?>
@@ -42,7 +48,7 @@
 <div class="modal modal-signup" v-if="isSignInOpen">
   <div class="modal__window">
     <h2 class="modal__title">Авторизация</h2>
-    <form class="signup modal-form">
+    <form method="POST" action="public/sign_in.php" class="signup modal-form">
       <label for="signup-login" class="modal-form__label">Логин</label>
       <input id="signup-login" name="sign-in_login" type="text" class="modal-form__input" required>
       <label for="signup-pass" class="modal-form__label">Пароль</label>

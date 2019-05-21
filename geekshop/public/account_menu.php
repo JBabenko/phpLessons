@@ -5,10 +5,7 @@ if ($_GET['userexit']) {
 }
 
 if (isset($_SESSION['user'])) {
-  $users = getUsers();
-  foreach ($users as $user) {
-    if ($user['login'] === $_SESSION['user']) {
-      $activeUser = $user;
-    }
-  }
+  $activeUser = getUser($_SESSION['user']['login']);
+} else {
+  $activeUser = false;
 }

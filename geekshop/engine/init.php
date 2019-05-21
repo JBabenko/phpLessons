@@ -35,11 +35,27 @@ function getProducts($query = "SELECT * FROM products") {
   return $products;
 }
 
-function getUsers($query = "SELECT * FROM users") {
-  $getUsersQuery = mysqli_query(dbConnect(), $query);
+function getUsers() {
+  $getUsersQuery = mysqli_query(dbConnect(), "SELECT * FROM users");
   $users = [];
   while ($row = mysqli_fetch_assoc($getUsersQuery)) {
       $users[] = $row;
   }
   return $users;
+}
+
+function getUser($login) {
+
+  $query_auth = sprintf('SELECT * FROM users WHERE login = "%s" LIMIT 1', $login);
+  $mysql_auth = mysqli_query(dbConnect(), $query_auth);
+
+  $user = NULL;
+
+  while ($row = mysqli_fetch_assoc($mysql_auth)) {
+    $user[] = $row;
+  }
+
+   if (!is_null($user))
+    return $user[0];
+    return false;
 }
