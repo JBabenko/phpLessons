@@ -25,6 +25,9 @@ if ( isset($_GET['addtocart']) ) {
       $addedItem['quantity'] = 1;
       $_SESSION['cart'][] = $addedItem;
     }
+  } else {
+    $addedItem['quantity'] = 1;
+    $_SESSION['cart'][] = $addedItem;
   }
 }  
 
@@ -54,9 +57,11 @@ if ( isset($_GET['cartremove']) ) {
   }
 }  
 
-$cart = $_SESSION['cart'];
+if ($_SESSION['cart']) {
+  $cart = $_SESSION['cart'];
 
-$cartTotal = 0;
-foreach ($cart as $item) {
-  $cartTotal += $item['price'] * $item['quantity'];
+  $cartTotal = 0;
+  foreach ($cart as $item) {
+    $cartTotal += $item['price'] * $item['quantity'];
+  }
 }
