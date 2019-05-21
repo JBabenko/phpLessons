@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $getProductsQuery = mysqli_query(dbConnect(), "SELECT * FROM products");
 
 $products = [];

@@ -1,7 +1,6 @@
 <?php
 
 $products = getProducts();
-$cart = getCart();
 
 if ( isset($_GET['addtocart']) ) {
 
@@ -9,55 +8,55 @@ if ( isset($_GET['addtocart']) ) {
 
   foreach ($products as $product) {
     if ($product['id'] === $addItemId) {
-      $addItemName = $product['name'];
-      $addItemPrice = $product['price'];
-      $addItemIcon = $product['icon'];
+      $addedItem = $product;
     }
   }
-  foreach ($cart as $cartItem) {
-    if ($cartItem['id'] === $addItemId) {
-      $existsCartItem = $cartItem;
-    }
-  }
-  if (!$existsCartItem) {
-    $addToCartQuery = sprintf(
-      "INSERT INTO cart (id, name, price, icon, quantity) VALUES (\"%s\", \"%s\", \"%s\", \"%s\", 1)", $addItemId, $addItemName, $addItemPrice, $addItemIcon
-    );
-  } else {
-    $addToCartQuery = sprintf(
-      "UPDATE cart SET quantity = quantity+1 WHERE (id = \"%s\")", $addItemId
-    );
-  }
-  
-  mysqli_query(dbConnect(), $addToCartQuery);
 
-}
+  if (isset($_SESSION['cart'])) {
+    
+    foreach ($_SESSION['cart'] as &$cartItem) {
+      if ( $cartItem['id'] === $addedItem['id'] ) {
+        $cartItem['quantity']++;
+        $existingItem = $cartItem;
+      }
+    }
+    
+    if (!$existingItem) {
+      $addedItem['quantity'] = 1;
+      $_SESSION['cart'][] = $addedItem;
+    }
+  }
+}  
 
 if ( isset($_GET['cartremove']) ) {
 
   $removedItemId = $_GET['cartremove'];
 
-  foreach ($cart as $cartItem) {
-    if ($cartItem['id'] === $removedItemId) {
-      if ($cartItem['quantity'] > 1) {
-        $removeFromCartQuery = sprintf(
-          "UPDATE cart SET quantity = quantity-1 WHERE (id = \"%s\")", $removedItemId
-        );
-      } else {
-        $removeFromCartQuery = sprintf(
-          "DELETE FROM cart WHERE (id = \"%s\")", $removedItemId
-        );
-      }
+  foreach ($products as $product) {
+    if ($product['id'] === $removedItemId) {
+      $removedItem = $product;
     }
   }
 
-  mysqli_query(dbConnect(), $removeFromCartQuery);
-}
+  if (isset($_SESSION['cart'])) {
+    $itemIndex = 0;
+    foreach ($_SESSION['cart'] as &$cartItem) {
+      if ( $cartItem['id'] === $removedItem['id'] ) {
+        if ($cartItem['quantity'] > 1) {
+          $cartItem['quantity']--;
+        } else {
+          unset($_SESSION['cart'][$itemIndex]);
+          sort($_SESSION['cart']);
+        }
+      }
+      $itemIndex++;
+    }
+  }
+}  
 
-$cart = getCart();
+$cart = $_SESSION['cart'];
 
 $cartTotal = 0;
-foreach ($cart as $cartItem) {
-  $cartTotal += $cartItem['price'] * $cartItem['quantity'];
+foreach ($cart as $item) {
+  $cartTotal += $item['price'] * $item['quantity'];
 }
-
