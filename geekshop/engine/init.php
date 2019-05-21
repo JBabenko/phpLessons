@@ -35,11 +35,11 @@ function getProducts($query = "SELECT * FROM products") {
   return $products;
 }
 
-function getCart($query = "SELECT * FROM cart") {
-  $getCartQuery = mysqli_query(dbConnect(), $query);
-  $cart = [];
-  while ($row = mysqli_fetch_assoc($getCartQuery)) {
-      $cart[] = $row;
+function getUsers($query = "SELECT * FROM users") {
+  $getUsersQuery = mysqli_query(dbConnect(), $query);
+  $users = [];
+  while ($row = mysqli_fetch_assoc($getUsersQuery)) {
+      $users[] = $row;
   }
-  return $cart;
+  return $users;
 }

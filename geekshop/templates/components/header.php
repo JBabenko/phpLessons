@@ -1,9 +1,10 @@
 <?php 
-    require ROOT_DIR.'public/cart.php' 
+    require ROOT_DIR.'public/cart.php';
+    require ROOT_DIR.'public/account_menu.php';
 ?>
 
 <body>
-    <div id="app">
+    <div id="app" style="display:none">
         <header class="header">
             <div class="container header-wrap">
                 <div class="header-left">
@@ -77,8 +78,9 @@
                         <?php require 'cart.php' ?>
 
                     </div>
-                    <a href="#" class="button header-account-button">My Account <span
-                            class="header-account-arrow">▼</span></a>
+                    
+                    <?php require 'account_menu.php' ?>
+
                 </div>
             </div>
         </header>

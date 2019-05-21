@@ -1,9 +1,11 @@
 new Vue({
   el: '#app',
   data: {
-    isAddReviewOpen: false
+    isAddReviewOpen: false,
+    isSignUpOpen: false,
+    isSignInOpen: false
   },
-  created() {
+  mounted() {
     document.querySelector('#app').style.display = 'block';
   }
 });
